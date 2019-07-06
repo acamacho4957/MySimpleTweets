@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:clipChildren="false"
+    android:clipToPadding="false">
+
+    <View
+        android:id="@+id/vBar"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:background="@color/medium_gray_50"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etCompose"
+        android:layout_width="0dp"
+        android:layout_height="350dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:ems="10"
+        android:gravity="top"
+        android:hint="What's happening?"
+        android:inputType="textLongMessage|textMultiLine"
+        android:maxHeight="200dp"
+        app:layout_constraintEnd_toEndOf="@+id/vBar"
+        app:layout_constraintStart_toStartOf="@+id/vBar"
+        app:layout_constraintTop_toBottomOf="@+id/btClose" />
+
+    <Button
+        android:id="@+id/btAccept"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/rounded_tweet_outline"
+        android:text="@string/tweet"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/etCompose"
+        app:layout_constraintTop_toBottomOf="@+id/etCompose" />
+
+    <Button
+        android:id="@+id/btClose"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/ic_vector_close"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vBar" />
+
+    <TextView
+        android:id="@+id/tvCounter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:text="TextView"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btAccept"
+        app:layout_constraintEnd_toStartOf="@+id/btAccept"
+        app:layout_constraintTop_toTopOf="@+id/btAccept" />
+
+    <TextView
+        android:id="@+id/tvReplyStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/darker_gray"
+        app:layout_constraintBottom_toTopOf="@+id/etCompose"
+        app:layout_constraintEnd_toEndOf="@+id/etCompose" />
+
+    <ImageView
+        android:id="@+id/ivDown"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="3dp"
+        android:rotation="270"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/etCompose"
+        app:layout_constraintEnd_toStartOf="@+id/tvReplyStatus"
+        app:layout_constraintTop_toTopOf="@+id/tvReplyStatus"
+        app:srcCompat="?attr/homeAsUpIndicator" />
+</android.support.constraint.ConstraintLayout>
